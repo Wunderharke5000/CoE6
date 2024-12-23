@@ -243,11 +243,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arved\\RiderProjects\\CoE6\\CoE6\\CoE6.csproj",
+      "projectUniqueName": "C:\\Users\\arved\\Documents\\Gem\\CoE6\\CoE6\\CoE6\\CoE6.csproj",
       "projectName": "CoE6",
-      "projectPath": "C:\\Users\\arved\\RiderProjects\\CoE6\\CoE6\\CoE6.csproj",
+      "projectPath": "C:\\Users\\arved\\Documents\\Gem\\CoE6\\CoE6\\CoE6\\CoE6.csproj",
       "packagesPath": "C:\\Users\\arved\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arved\\RiderProjects\\CoE6\\CoE6\\obj\\",
+      "outputPath": "C:\\Users\\arved\\Documents\\Gem\\CoE6\\CoE6\\CoE6\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\arved\\AppData\\Roaming\\NuGet\\NuGet.Config"
