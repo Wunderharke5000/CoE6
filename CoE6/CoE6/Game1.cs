@@ -18,7 +18,7 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
+        Camera.Initialize(GraphicsDevice);
 
         base.Initialize();
     }
@@ -26,6 +26,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
+        
 
         // TODO: use this.Content to load your game content here
     }
