@@ -8,6 +8,9 @@ public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
+    
+    // Game Stuff
+    private TileMap _tileMap;
 
     public Game1()
     {
@@ -18,6 +21,7 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
+        ResourceLoader.InitialzeResourceLoader(Content, GraphicsDevice);
         Camera.Initialize(GraphicsDevice);
 
         base.Initialize();
@@ -27,7 +31,8 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         
-
+        // Game Stuff
+        _tileMap = new TileMap(20, 20);
         // TODO: use this.Content to load your game content here
     }
 
@@ -38,6 +43,7 @@ public class Game1 : Game
             Exit();
 
         // TODO: Add your update logic here
+        InputManager.Update(gameTime);
 
         base.Update(gameTime);
     }
@@ -45,9 +51,13 @@ public class Game1 : Game
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
+        _spriteBatch.Begin();
 
         // TODO: Add your drawing code here
+        if(_tileMap != null)
+            Camera.RenderView(_spriteBatch, _tileMap);
 
+        _spriteBatch.End();
         base.Draw(gameTime);
     }
 }

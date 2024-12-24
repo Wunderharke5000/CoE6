@@ -20,12 +20,24 @@ public class TileMap
     public void Draw(SpriteBatch spriteBatch, Rectangle drawarea, Rectangle bounds) // Bounds.Height is useless. Draws tiles of area in certain dimensions
     {
         int tileSize = bounds.Width / drawarea.Width;
-        for (int x = 0; x < drawarea.Width; x++)
-        for (int y = 0; y < drawarea.Height; y++)
+        for (int x = -1; x < drawarea.Width; x++)
+        for (int y = -1; y < drawarea.Height; y++)
         {
-            spriteBatch.Draw(_tileTextures[Map[drawarea.X + x, drawarea.Y + y, 0]],
-                new Rectangle(bounds.X + drawarea.X * tileSize, bounds.Y + drawarea.Y * tileSize, tileSize, tileSize),
-                Color.Green);
+            if(x + drawarea.X < Map.GetLength(0) && y + drawarea.Y < Map.GetLength(1) && drawarea.X + x >= 0 && drawarea.Y + y >= 0)
+            {
+                if (x % 2 != y % 2)
+                    spriteBatch.Draw(_tileTextures[Map[drawarea.X + x, drawarea.Y + y, 0]],
+                        new Rectangle(bounds.X + x * tileSize, bounds.Y + y * tileSize, tileSize, tileSize),
+                        Color.DarkGreen);
+                else
+                    spriteBatch.Draw(_tileTextures[Map[drawarea.X + x, drawarea.Y + y, 0]],
+                        new Rectangle(bounds.X + x * tileSize, bounds.Y + y * tileSize, tileSize, tileSize),
+                        Color.Green);
+            }
+            else
+                spriteBatch.Draw(ResourceLoader.SolidColorTexture,
+                new Rectangle(bounds.X + x * tileSize, bounds.Y + y * tileSize, tileSize, tileSize),
+                Color.Red);
         }
         
     }
